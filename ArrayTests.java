@@ -1,4 +1,7 @@
 import static org.junit.Assert.*;
+
+import java.beans.Transient;
+
 import org.junit.*;
 
 public class ArrayTests {
@@ -14,5 +17,18 @@ public class ArrayTests {
   public void testReversed() {
     int[] input1 = { };
     assertArrayEquals(new int[]{ }, ArrayExamples.reversed(input1));
+  }
+
+  @Test
+  public void testMyReverseInPlace(){
+    int[] input = {1, 2, 3, 4};
+    ArrayExamples.reverseInPlace(input);
+    assertArrayEquals(new int[]{4 , 3, 2, 1}, input);
+  }
+
+  @Test
+  public void testMyReversed(){
+    int[] input = {1, 2, 3, 4};
+    assertArrayEquals(new int[]{4, 3, 2, 1}, ArrayExamples.reversed(input));
   }
 }
